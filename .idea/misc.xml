@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/app_background.xml" value="0.28425925925925927" />
+        <entry key="app/src/main/res/drawable/arrow_left.xml" value="0.30185185185185187" />
+        <entry key="app/src/main/res/drawable/arrow_trend_up_thin.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/chevron_up_thin.xml" value="0.3194444444444444" />
+        <entry key="app/src/main/res/drawable/clock_rotate_left.xml" value="0.30185185185185187" />
+        <entry key="app/src/main/res/drawable/closed_captioning.xml" value="0.30185185185185187" />
+        <entry key="app/src/main/res/drawable/fire_flame_solid.xml" value="0.3175925925925926" />
+        <entry key="app/src/main/res/drawable/gear_solid.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/gear_thin.xml" value="0.12685185185185185" />
+        <entry key="app/src/main/res/drawable/heart_duotone.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/heart_solid.xml" value="0.125" />
+        <entry key="app/src/main/res/drawable/heart_thin.xml" value="0.12685185185185185" />
+        <entry key="app/src/main/res/drawable/magnifying_glass_thin.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/play_solid.xml" value="0.184375" />
+        <entry key="app/src/main/res/drawable/rectangle_vertical_history_duotone.xml" value="0.12685185185185185" />
+        <entry key="app/src/main/res/drawable/rectangle_vertical_history_thin.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/selector_like.xml" value="0.36203703703703705" />
+        <entry key="app/src/main/res/font/sfpro_display.xml" value="0.2064814814814815" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_searchable.xml" value="0.16822916666666668" />
+        <entry key="app/src/main/res/layout/collapse_bar.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3312820512820513" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/fragment_video_list.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/item_header_view.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/item_simple.xml" value="0.16822916666666668" />
+        <entry key="app/src/main/res/layout/item_video_model.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/item_videomodel.xml" value="0.2796296296296296" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/load_state_footer_view_item.xml" value="0.2518518518518518" />
+        <entry key="app/src/main/res/layout/search_view.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/yt_overlay.xml" value="0.16822916666666668" />
+        <entry key="app/src/main/res/layout/yt_seconds_view.xml" value="0.45" />
+        <entry key="app/src/main/res/menu/menu_bottom.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/menu/menu_home.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/xml/searchable.xml" value="0.35572916666666665" />
+        <entry key="library/src/main/res/drawable/ic_action_navigation_arrow_back.xml" value="0.3194444444444444" />
+        <entry key="library/src/main/res/drawable/ic_action_search_white.xml" value="0.3194444444444444" />
+        <entry key="library/src/main/res/layout/list_item.xml" value="0.35572916666666665" />
+        <entry key="library/src/main/res/layout/search_view.xml" value="0.35572916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="EntryPointsManager">
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="dagger.Provides" />
+    </list>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="ifRoom"
+        android:id="@+id/settings"
+        android:icon="@drawable/gear_solid"
+        android:title="@string/settings" />
+    <item
+        app:showAsAction="always"
+        android:id="@+id/fav"
+        android:icon="@drawable/heart_solid"
+        android:title="@string/favourite"/>
+    <item
+        app:showAsAction="always"
+        android:id="@+id/history"
+        android:icon="@drawable/rectangle_vertical_history_duotone"
+        android:title="@string/history"/>
+</menu>

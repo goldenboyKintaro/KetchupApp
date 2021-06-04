@@ -1,0 +1,42 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.KetchupApp" parent="Theme.KetchupApp.Base">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_200</item>
+        <item name="colorPrimaryVariant">@color/blue_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="android:windowBackground">@drawable/app_background</item>
+        <item name="android:listDivider">@color/grey_100</item>
+    </style>
+
+    <style name="TextAppearance.KetchupApp.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="color">@color/grey_200</item>
+    </style>
+
+    <style name="Widget.KetchupApp.BlockButton" parent="Base.Widget.KetchupApp.BlockButton">
+        <item name="backgroundTint">@color/grey_200</item>
+        <item name="drawableTint">@color/blue_900</item>
+    </style>
+    <style name="Widget.KetchupApp.SearchBar" parent="Base.Widget.KetchupApp.SearchBar">
+        <item name="backgroundTint">@color/grey_200</item>
+        <item name="android:textAppearance">@style/TextAppearance.KetchupApp.Caption</item>
+    </style>
+
+    <style name="MaterialSearchViewStyle">
+        <item name="searchBackground">@color/blue_900</item>
+        <item name="iconTint">@color/white</item>
+        <item name="searchSuggestionBackground">@color/blue_900</item>
+        <item name="listTextColor">@color/white</item>
+        <item name="searchBarHeight">?attr/actionBarSize</item>
+        <item name="voiceHintPrompt">@string/hint_prompt</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/grey_200</item>
+        <item name="android:hint">@string/search_hint</item>
+        <item name="android:inputType">textCapWords</item>
+    </style>
+</resources>

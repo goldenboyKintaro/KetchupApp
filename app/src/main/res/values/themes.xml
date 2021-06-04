@@ -1,0 +1,24 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.KetchupApp" parent="Theme.KetchupApp.Base">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/grey</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="TextAppearance.KetchupApp.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="color">@color/black</item>
+    </style>
+
+    <style name="Widget.KetchupApp.BlockButton" parent="Base.Widget.KetchupApp.BlockButton">
+        <item name="backgroundTint">@color/grey_200</item>
+    </style>
+    <style name="Widget.KetchupApp.SearchBar" parent="Base.Widget.KetchupApp.SearchBar">
+        <item name="backgroundTint">@color/grey_200</item>
+    </style>
+</resources>
