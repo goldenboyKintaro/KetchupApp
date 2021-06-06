@@ -24,7 +24,7 @@ class HomeRemoteMediator (
         val videoModel = toVideoModel(result)
         return suspend {
             videoDao.insertAll(videoModel)
-            pageDao.bind(videoModel.map { PageVideoModel(pageNumber, it.id, PageTag.HOME) })
+            pageDao.bind(videoModel.mapIndexed { i, x -> PageVideoModel(pageNumber, i, x.id, PageTag.HOME) })
             videoModel.isEmpty()
         }
     }

@@ -17,10 +17,12 @@ import com.moblie.ketchupapp.testutils.RetroFit
 class ApiTest {
 
     private var service: HQVideoService? = null
+    private var service0: MyDaddyService? = null
 
     @Before
     fun setup(){
         service = createService()
+        service0 = createMD()
     }
 
     @Test
@@ -28,9 +30,29 @@ class ApiTest {
         val k = runBlocking {
             service?.getPage(1)
         }
+
+        assertFalse(k?.videos?.get(20)?.url, true)
         assertNotNull(k?.videos?.get(0)?.url)
         assertNotNull(k?.videos?.get(0)?.title)
         assertNotNull(k?.videos?.get(0)?.length)
+    }
+
+    @Test
+    fun testGetVideo(){
+        val res = runBlocking {
+            service0?.getVideo("5e1e1ad0d8c3c391ca")
+        }
+        val x = res?.data
+    }
+
+    @Test
+    fun testVideoFetch(){
+        val res = runBlocking {
+            service?.getVideoFrameLink(101958, "fuck_her_ass_nice_and_hard")
+        }
+
+        assertFalse(res?.url, true)
+
     }
 
     @Test
@@ -48,10 +70,10 @@ class ApiTest {
         val k = runBlocking {
             service?.getCategories()
         }
-        println(k?.items?.get(0)?.title)
-        assertNotNull(k?.items?.get(0)?.url)
-        assertNotNull(k?.items?.get(0)?.title)
-        assertNotNull(k?.items?.get(0)?.thumbnail)
+        println(k?.items?.get(20)?.title)
+        assertNotNull(k?.items?.get(20)?.url)
+        assertNotNull(k?.items?.get(20)?.title)
+        assertNotNull(k?.items?.get(20)?.thumbnail)
     }
 
     @Test
@@ -66,4 +88,5 @@ class ApiTest {
     }
     private fun createService(): HQVideoService = RetroFit.retrofit.create(HQVideoService::class.java)
 
+    private fun createMD() : MyDaddyService = RetroFit.mydaddy.create(MyDaddyService::class.java)
 }

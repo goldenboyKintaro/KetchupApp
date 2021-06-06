@@ -1,6 +1,7 @@
 package com.moblie.ketchupapp.api
 
-import retrofit2.http.GET
+import com.moblie.ketchupapp.api.data.SimplePage
+import com.moblie.ketchupapp.api.data.VideoPage
 import retrofit2.http.Path
 import retrofit2.http.Query
 

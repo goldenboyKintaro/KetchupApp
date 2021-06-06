@@ -8,6 +8,6 @@ interface PageDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun bind(page: List<PageVideoModel>)
 
-    @Query("DELETE FROM page_video_model WHERE tag = :tag AND pageNo = :pageNo")
-    suspend fun clearPage(tag: String, pageNo: Int)
+    @Query("DELETE FROM page_video_model WHERE tag = :tag")
+    suspend fun clearPage(tag: String)
 }

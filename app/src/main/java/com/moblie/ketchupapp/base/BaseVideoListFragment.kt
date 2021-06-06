@@ -1,5 +1,6 @@
 package com.moblie.ketchupapp.base
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.moblie.ketchupapp.R
 import com.moblie.ketchupapp.model.VideoModel
+import com.moblie.ketchupapp.ui.VideoActivity
+import com.moblie.ketchupapp.ui.VideoActivity.Companion.EXTRA_ID
+import com.moblie.ketchupapp.ui.VideoActivity.Companion.EXTRA_TITLE
 import com.moblie.ketchupapp.ui.adapter.LoadStateAdapter
 import com.moblie.ketchupapp.ui.adapter.VideoListPageAdapter
 import com.moblie.ketchupapp.ui.adapter.diffutils.VideoDiffUtils
@@ -23,31 +27,35 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.distinctUntilChangedBy
 import kotlinx.coroutines.flow.filter
 
-abstract class BaseVideoListFragment : BaseFragment() {
+abstract class BaseVideoListFragment : BaseViewStubFragment() {
 
     abstract val listData: LiveData<PagingData<VideoModel>>
 
     abstract val header: RecyclerView.Adapter<*>?
 
-    private val pagingAdapter = VideoListPageAdapter(VideoDiffUtils)
+    private val pagingAdapter = VideoListPageAdapter(VideoDiffUtils) {
+        val intent = Intent(this.context, VideoActivity::class.java).apply {
+            putExtra(EXTRA_ID, it.id)
+            putExtra(EXTRA_TITLE, it.title)
+        }
+        startActivity(intent)
+    }
 
     private lateinit var swipeRefreshLayout: SwipeRefreshLayout
     private lateinit var recyclerView: RecyclerView
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val root = inflater.inflate(R.layout.fragment_video_list, container, false)
-        swipeRefreshLayout = root as SwipeRefreshLayout
+    override fun onCreateViewAfterViewStubInflated(inflatedView: View, savedInstanceState: Bundle?) {
+        swipeRefreshLayout = inflatedView as SwipeRefreshLayout
         recyclerView = swipeRefreshLayout.findViewById(R.id.recycler_view)
         setupRecyclerView()
 
         swipeRefreshLayout.setOnRefreshListener {
-                pagingAdapter.refresh()
+            pagingAdapter.refresh()
         }
+    }
 
-        return root
+    override fun getViewStubLayoutResource(): Int {
+        return R.layout.fragment_video_list
     }
 
     private fun setupRecyclerView() {

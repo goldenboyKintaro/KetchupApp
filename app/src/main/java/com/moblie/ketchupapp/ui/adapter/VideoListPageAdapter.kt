@@ -2,14 +2,13 @@ package com.moblie.ketchupapp.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.moblie.ketchupapp.ui.adapter.viewholder.VideoViewHolder
 import com.moblie.ketchupapp.databinding.ItemVideoModelBinding
 import com.moblie.ketchupapp.model.VideoModel
 
-class VideoListPageAdapter(diffCallback: DiffUtil.ItemCallback<VideoModel>) : PagingDataAdapter<VideoModel, VideoViewHolder>(diffCallback) {
+class VideoListPageAdapter(diffCallback: DiffUtil.ItemCallback<VideoModel>, val onClickCallback: (item: VideoModel) -> Unit) : PagingDataAdapter<VideoModel, VideoViewHolder>(diffCallback) {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -17,7 +16,7 @@ class VideoListPageAdapter(diffCallback: DiffUtil.ItemCallback<VideoModel>) : Pa
     ): VideoViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding = ItemVideoModelBinding.inflate(inflater)
-        return VideoViewHolder(binding)
+        return VideoViewHolder(binding, onClickCallback)
     }
 
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {

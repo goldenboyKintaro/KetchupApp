@@ -1,20 +1,12 @@
 package com.moblie.ketchupapp.repository
 
-import androidx.lifecycle.viewModelScope
-import androidx.paging.cachedIn
 import androidx.room.withTransaction
 import com.moblie.ketchupapp.api.HQVideoService
-import com.moblie.ketchupapp.api.PageItem
 import com.moblie.ketchupapp.room.KetchupDatabase
 import com.moblie.ketchupapp.room.model.CategoriesModel
 import com.moblie.ketchupapp.room.model.GirlsModel
-import com.moblie.ketchupapp.ui.adapter.SimpleItemAdapter
-import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.onCompletion
-import java.lang.Exception
 import javax.inject.Inject
 
 class ItemsRepositoryImpl @Inject constructor(

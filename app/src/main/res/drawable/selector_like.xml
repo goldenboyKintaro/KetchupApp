@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:state_checked="true"
-        app:tint="@color/red_600"
-        android:drawable="@drawable/heart_solid"/>
-    <item android:state_checked="false" android:drawable="@drawable/heart_thin" />
-</selector>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:bottom="8dp" android:top="8dp" android:right="8dp" android:left="8dp">
+        <selector>
+            <item android:state_checked="true"
+                app:tint="@color/red_600"
+                android:drawable="@drawable/heart_solid"/>
+            <item android:state_checked="false" android:drawable="@drawable/heart_thin" />
+        </selector>
+    </item>
+</layer-list>

@@ -3,6 +3,8 @@ package com.moblie.ketchupapp.hilt
 import android.content.Context
 import androidx.room.Room
 import com.moblie.ketchupapp.api.HQVideoService
+import com.moblie.ketchupapp.api.MyDaddyService
+import com.moblie.ketchupapp.api.MyDaddyStatusService
 import com.moblie.ketchupapp.room.KetchupDatabase
 import com.moblie.ketchupapp.utils.Environment
 import dagger.Module
@@ -30,14 +32,29 @@ class SingletonModule {
 
     @Provides
     @Singleton
-    fun retrofit(): Retrofit =  Retrofit.Builder()
-        .baseUrl(Environment.BASE_URL)
-        .addConverterFactory(JspoonConverterFactory.create())
-        .build()
+    fun jspoon(): JspoonConverterFactory =  JspoonConverterFactory.create()
 
     @Provides
     @Singleton
-    fun apiService(retrofit: Retrofit): HQVideoService =
-            retrofit.create(HQVideoService::class.java)
+    fun apiService(jspoon: JspoonConverterFactory): HQVideoService =
+        Retrofit.Builder()
+            .baseUrl(Environment.BASE_URL)
+            .addConverterFactory(jspoon)
+            .build().create(HQVideoService::class.java)
+
+    @Provides
+    @Singleton
+    fun accessService(jspoon: JspoonConverterFactory): MyDaddyStatusService =
+        Retrofit.Builder()
+            .baseUrl(Environment.STAT_URL)
+            .addConverterFactory(jspoon)
+            .build().create(MyDaddyStatusService::class.java)
+    @Provides
+    @Singleton
+    fun myService(jspoon: JspoonConverterFactory): MyDaddyService =
+        Retrofit.Builder()
+            .baseUrl(Environment.MY_DADDY_URL)
+            .addConverterFactory(jspoon)
+            .build().create(MyDaddyService::class.java)
 
 }

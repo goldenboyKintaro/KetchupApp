@@ -10,16 +10,20 @@
             name="video"
             type="com.moblie.ketchupapp.model.VideoModel" />
     </data>
-
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        >
 
         <LinearLayout
             android:id="@+id/video_item_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:visibility="@{video == null ? View.GONE : View.VISIBLE}">
 
             <FrameLayout
+                android:id="@+id/touchTarget"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -28,11 +32,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:visibility="@{video == null ? View.VISIBLE : View.GONE }" />
+
                 <ImageView
-                    app:imageUrl="@{Environment.BASE_URL+'/'+video.preview}"
                     android:layout_width="match_parent"
                     android:layout_height="227dp"
-                    android:contentDescription="@string/thumbnail" />
+                    android:contentDescription="@string/thumbnail"
+                    app:imageUrl="@{Environment.BASE_URL+'/'+video.preview}" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
@@ -40,47 +45,24 @@
                     android:layout_gravity="bottom|end"
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
-                    android:text="@{video.length}"
                     android:backgroundTint="@android:color/black"
+                    android:text="@{video.length}"
                     android:textAlignment="viewEnd" />
 
             </FrameLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_gravity="center_horizontal"
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:layout_height="40dp">
-
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_weight="0.5"
-                    android:fontFamily="@font/sfpro_display"
-                    android:text="@{video.title}"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/checkBox"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ToggleButton
-                    android:id="@+id/checkBox"
-                    android:layout_width="36dp"
-                    android:layout_height="0dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/selector_like"
-                    android:backgroundTint="@color/red_600"
-                    android:textOff=""
-                    android:textOn=""
-                    app:layout_constraintBottom_toBottomOf="@+id/textView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="48dp"
+                android:layout_marginEnd="64dp"
+                android:layout_weight="0.5"
+                android:fontFamily="@font/sfpro_display"
+                android:text="@{video.title}"
+                android:textSize="16sp"/>
 
             <View
                 android:id="@+id/divider"
@@ -90,4 +72,17 @@
                 android:background="?android:attr/listDivider" />
         </LinearLayout>
 
+        <ToggleButton
+            android:id="@+id/checkBox"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/selector_like"
+            android:backgroundTint="@color/red_600"
+            android:textOff=""
+            android:textOn=""
+            android:layout_gravity="bottom|end"
+            />
+    </FrameLayout>
 </layout>

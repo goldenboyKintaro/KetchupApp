@@ -11,4 +11,10 @@ object RetroFit {
         .baseUrl(Environment.BASE_URL)
         .addConverterFactory(JspoonConverterFactory.create())
         .build()
+
+    @JvmStatic
+    val mydaddy =  Retrofit.Builder()
+        .baseUrl("http://mydaddy.cc/")
+        .addConverterFactory(JspoonConverterFactory.create())
+        .build()
 }

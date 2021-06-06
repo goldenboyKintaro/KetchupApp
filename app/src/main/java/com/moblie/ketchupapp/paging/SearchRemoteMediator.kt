@@ -27,7 +27,7 @@ class SearchRemoteMediator (
 
         return suspend {
             videoDao.insertAll(videoModel)
-            pageDao.bind(videoModel.map { PageVideoModel(pageNumber, it.id, PageTag.SEARCH(query)) })
+            pageDao.bind(videoModel.mapIndexed { i, x -> PageVideoModel(pageNumber, i, x.id, PageTag.HOME) })
             videoModel.isEmpty()
         }
     }

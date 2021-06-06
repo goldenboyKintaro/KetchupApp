@@ -44,23 +44,18 @@ abstract class BaseRemoteMediator<T: Any>(val database: KetchupDatabase) : Remot
                 }
             }
 
-            val pageNo = loadKey ?: 1
-
             var transactions = true
 
             database.withTransaction {
                 if (loadType == LoadType.REFRESH) {
-                    pageDao.clearPage(tag, pageNo)
                     remoteKeyDao.deleteByQuery(tag)
+                    pageDao.clearPage(tag)
                 }
-
                 transactions = onBackedCall(loadKey)()
                 if(!transactions){
                     remoteKeyDao.insertOrReplace(RemoteKey(tag, (loadKey ?: 1) + 1))
                 }
             }
-
-
 
             Log.i("Log","page is $loadKey")
             MediatorResult.Success(

@@ -1,6 +1,8 @@
 package com.moblie.ketchupapp.api
 
-import kotlinx.coroutines.Deferred
+import com.moblie.ketchupapp.api.data.SimplePage
+import com.moblie.ketchupapp.api.data.VideoItemPage
+import com.moblie.ketchupapp.api.data.VideoPage
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -28,4 +30,7 @@ interface HQVideoService {
 
     @GET("/categories")
     suspend fun getCategories(): SimplePage
+
+    @GET("/hdporn/{videoId}-{title}.html")
+    suspend fun getVideoFrameLink(@Path("videoId") videoId: Long, @Path("title") title: String) : VideoItemPage
 }

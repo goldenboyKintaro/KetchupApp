@@ -113,6 +113,6 @@
         <OnSwipe
             motion:touchAnchorId="@+id/homeNavHost"
             motion:dragDirection="dragUp"
-            motion:touchAnchorSide="top" />
+            motion:onTouchUp="stop"/>
     </Transition>
 </MotionScene>

@@ -1,6 +1,6 @@
 package com.moblie.ketchupapp.utils
 
-import com.moblie.ketchupapp.api.VideoPage
+import com.moblie.ketchupapp.api.data.VideoPage
 import com.moblie.ketchupapp.model.VideoModel
 
 object Utils {

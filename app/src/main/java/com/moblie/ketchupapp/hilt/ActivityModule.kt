@@ -11,6 +11,4 @@ import dagger.hilt.android.components.ActivityComponent
 @Module
 class ActivityModule {
 
-    @Provides
-    fun homeAdapter() = VideoListPageAdapter(VideoDiffUtils)
 }

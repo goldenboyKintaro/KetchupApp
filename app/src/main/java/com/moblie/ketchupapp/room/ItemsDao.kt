@@ -4,8 +4,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.moblie.ketchupapp.api.PageItem
-import com.moblie.ketchupapp.model.VideoModel
 import com.moblie.ketchupapp.room.model.CategoriesModel
 import com.moblie.ketchupapp.room.model.GirlsModel
 import kotlinx.coroutines.flow.Flow
